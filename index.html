@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en" style="height: 100%; width: 100%">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<meta name="theme-color" content="#000000"/>
+<title>Dope - DennisGraham</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100..900&family=League+Gothic&family=Oswald&family=Poppins&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+<style>
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  font-size: 1vw;
+}
+
+body{
+  background: black;
+  font-family: 'League Gothic', sans-serif;
+  --dope-blue: #81ccf0;
+  --dope-pink: #da2370;
+}
+
+nav{
+  background: linear-gradient(to bottom, rgba(0,0,0,.5), transparent);
+  display: flex;
+  justify-content: space-between !important;
+  align-items: start !important;
+}
+
+.dennis-logo{
+  height: 5rem;
+  width: auto;
+}
+
+main{
+  color: white;
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+section{
+  position: relative;
+  padding: 0 20vw;
+  width: 100vw;
+}
+
+.last-section{
+  padding: 0 25vw;
+}
+
+.visit{
+  margin-bottom: 9rem;
+}
+
+.first-screen{
+  aspect-ratio: 16 / 8.5;
+}
+
+t1,t2,t3{
+  display: block;
+  font-size: 13.5vw;
+  line-height: 12.5vw;
+  white-space: nowrap;
+}
+
+t2{
+  color: transparent;
+  -webkit-text-stroke: 3px rgba(255,255,255,0.2);
+}
+
+.t3{
+  height: 12.5rem;
+}
+
+.photo{
+  position: absolute;
+  height: 80%;
+  width: 50%;
+  right: 20%;
+  bottom: 0;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.photo img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+  mask-image: linear-gradient(180deg, black 75%, transparent 95%);
+  -webkit-mask-image: linear-gradient(180deg, black 75%, transparent 95%);
+}
+
+.about{
+  position: absolute;
+  top: 18.5vw;
+  right: 5vw;
+  max-width: 40%;
+  cursor: pointer;
+  font-weight: 300;
+}
+
+.about:before{
+  content: attr(data-content);
+  font-family: Futura Book, Poppins, sans-serif;
+  position: absolute;
+  top: 5rem;
+  right: -10rem;
+  width: 40vw;
+  z-index: 100;
+  background: rgba(0,0,0,.8);
+}
+
+.about:after{
+  display: block;
+  position: relative;
+  top: 1.5rem;
+  left: 1.5rem;
+  content: ' ';
+  width: 1rem;
+  height: 1rem;
+  background: white;
+  border-radius: 99px;
+  outline-offset: 7px;
+  outline: white solid 1px;
+  animation: shining ease 1s infinite;
+}
+
+t4{
+  text-transform: uppercase;
+  position: absolute;
+  top: 11rem;
+  left: .5vw;
+  font-size: 2.5rem;
+  color: var(--dope-blue);
+}
+
+
+.watching-btn{
+  text-transform: uppercase;
+  position: absolute;
+  top: 15vw;
+  left: .5vw;
+  display: inline-block;
+  font-size: 1.2rem;
+  font-family: Montserrat, sans-serif;
+  line-height: 0.85;
+  color: white !important;
+  font-weight: 900;
+  outline: none !important;
+  border: 2px solid white !important;
+  border-radius: 1rem;
+  padding: 0.9rem 1.8rem;
+  background: rgba(0,0,0,.2);
+}
+
+.follows{
+  position: absolute;
+  bottom: 5vw;
+  left: 50%;
+  transform: translateX(-50%);
+  color: black;
+  font-size: 1.5rem;
+  padding: 1rem 2rem;
+  background: rgba(255,255,255,0.9);
+  border-radius: 0.5rem;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+
+.follows a {
+  margin-left: 4rem;
+}
+
+.follows img{
+  cursor: pointer;
+  width: 2rem;
+  height: 2rem;
+  object-fit: cover;
+}
+
+dope-title{
+  position: relative;
+  display: inline-block;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+}
+
+dope-title::after{
+  position: absolute;
+  display: block;
+  content: ' ';
+  height: 6px;
+  width: 19rem;
+  background: linear-gradient(90deg, var(--dope-blue) 0%, var(--dope-blue) 33.3%,var(--dope-pink) 33.4%, var(--dope-pink) 66.6%, gray 66.7%, gray 100%);
+  bottom: -.8rem;
+}
+
+.show-desc{
+  font-size: .9rem;
+  max-width: 29rem;
+  font-family: Futura Book, Poppins, sans-serif;
+}
+
+dope-desc::before{
+  position: relative;
+  top: .2rem;
+  display: inline-block;
+  content: ' ';
+  width: 1.3rem;
+  height: 1.3rem;
+  background: url("images/dope-icon.png");
+  background-size: cover;
+  margin-right: 1rem;
+}
+
+dope-desc{
+  font-family: "Oswald", sans-serif;
+  display: block;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+}
+
+footer{
+  text-align: center;
+  color: white;
+  font-family: Futura Book, sans-serif;
+  padding: 2rem 0;
+}
+
+footer a{
+  color: white;
+}
+
+@media (max-width: 768px) {
+  html{
+    font-size: 3vw;
+  }
+
+  section{
+    padding: 0 5vw;
+  }
+
+  .dennis-logo{
+    height: 3rem;
+  }
+
+  .first-screen{
+    aspect-ratio: 16 / 12;
+    min-height: 260px;
+  }
+
+  .last-section{
+    padding: 0 5vw;
+  }
+
+  .visit{
+    margin-bottom: 2rem;
+  }
+
+  .show-desc{
+    font-size: 1rem;
+    max-width: 100%;
+  }
+
+  .about{
+    z-index: 10;
+    bottom: 17vw;
+    right: 2vw;
+    max-width: 100%;
+    top: inherit;
+    font-size: 2rem;
+  }
+
+  .about:before{
+    top: 7rem;
+    right: 2rem;
+    font-size: 1.5rem;
+    position: fixed;
+    width: calc(100vw - 4rem);
+  }
+
+  .about:after{
+    left: 3rem;
+  }
+
+  .follows{
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    bottom: 3vw;
+  }
+
+  .follows a{
+    margin-left: 1.5rem;
+  }
+
+  .follows img{
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  desc{
+    flex-direction: column !important;
+  }
+
+  dope-desc{
+    white-space: normal;
+    font-size: 1rem;
+  }
+
+  dope-title::after{
+    width: 100%;
+  }
+
+  .last-section > div{
+    flex-direction: column !important;
+    align-items: center !important;
+  }
+
+  .last-section > div > img{
+    max-width: 80% !important;
+    margin-bottom: 2rem;
+  }
+
+  footer{
+    margin-top: 5vw;
+    padding: 1.5rem 0;
+  }
+}
+
+@keyframes shining {
+  0%{ opacity: 1; }
+  50%{ opacity: 0; }
+  100% { opacity: 1; }
+}
+</style>
+</head>
+<body>
+<!-- Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark nav-bar-black fixed-top">
+  <a class="navbar-brand" href="#">
+    <img class="dennis-logo" src="images/dope-x-dennis-logo.png" alt="Dennis Graham Podcast"/>
+  </a>
+</nav>
+
+<main>
+  <!-- First Screen -->
+  <section class="first-screen" style="padding-top: 72px;">
+    <div
+      style='position: absolute; background-image: url("images/podcast-header-bg.jpg"); width: 100%; height: 100%; background-size: cover; background-position: center; inset: 0; z-index: -1'
+    ></div>
+
+    <div style="position: relative; display: flex; flex-direction: column;">
+      <div class="about">
+        ABOUT DENNIS
+      </div>
+    </div>
+
+    <div class="follows">
+      <span style="margin-right: 1vw">FOLLOW DOPE</span>
+
+      <a href="https://www.youtube.com/@dopemusicapp" target="_blank">
+        <img src="images/youtube-logo.png" alt="YouTube"/>
+      </a>
+    </div>
+
+  </section>
+
+  <section>
+    <div
+      style='position: absolute; background-image: url("images/video-bg.jpg"); width: 100%; aspect-ratio: 192/65; background-size: cover; left: 0; bottom: -3rem; z-index: -1'
+    ></div>
+
+    <desc style="display: flex; align-items: center; justify-content: space-between; padding: 3vw 0;">
+      <div style="padding: 3vw 0">
+        <dope-title>THE SHOW</dope-title>
+        <div class="show-desc">
+          Our show is designed to be the ultimate fan experience, offering an exclusive, behind-the-scenes look into the lives and creative processes of the top artists across the industry. Through in-depth interviews and engaging storytelling, we'll provide listeners with a deep dive into the world of their favorite musicians, uncovering the inspirations, challenges, and triumphs that define their careers
+        </div>
+      </div>
+
+      <div>
+        <dope-desc style="margin-bottom: 1vw">
+          Exclusive behind the scenes with top artists
+        </dope-desc>
+
+        <dope-desc style="margin-bottom: 1vw">
+          One episode per 2 weeks
+        </dope-desc>
+
+        <dope-desc>
+          available on all podcast platforms
+        </dope-desc>
+      </div>
+    </desc>
+
+  </section>
+
+  <section class="last-section">
+    <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 6.7vw">
+      <img src="images/product-image.png" alt="Dope App" style="max-width: 45%; height: auto;"/>
+
+      <div class="visit" style="font-size: 3rem; line-height: 2.5rem; display: flex; flex-direction: column; align-items: center">
+        <div style="text-align: center">
+          <span>Listen</span>,
+          <span style="color: var(--dope-blue)">Engage</span>,<br/>
+          <span style="color: var(--dope-pink)">Connect</span><br/>
+        </div>
+
+        <a href="#" target="_blank" class="watching-btn" style="position: inherit; display: inline-block; margin-top: 1rem; font-family: Futura, sans-serif; padding: .9rem 3.6rem">
+          coming soon
+        </a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<!-- Footer Section -->
+<footer>
+  <p>&copy; 2026 Dope Music. All rights reserved.</p>
+</footer>
+
+<script defer>
+const aboutText = 'Dennis Graham is a musician and the father of the renowned rapper and singer Drake. Originally from Memphis, Tennessee, Dennis has a rich history in the music industry, having worked as a drummer and collaborated with notable artists such as Jerry Lee Lewis. He is known for his deep connections within the music world and his charismatic personality, which make him a compelling host and figure in entertainment.';
+const about = document.querySelector('.about');
+about.addEventListener('click', () => {
+  if (about.getAttribute('data-content')) {
+    about.removeAttribute('data-content');
+  } else {
+    about.setAttribute('data-content', aboutText);
+  }
+});
+</script>
+</body>
+</html>
